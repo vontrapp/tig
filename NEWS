@@ -1,5 +1,7 @@
 Release notes
 =============
+Bug fixes:
+ - Use erasechar() to check for the correct backspace character.
 
 tig-0.17
 --------
@@ -12,7 +14,7 @@ Improvements:
 
 Bug fixes:
 
- - Fix ncurses 2.8 issue by passing non-zero column size to newwin(1).
+ - Fix ncurses 5.8 issue by passing non-zero column size to newwin().
  - Fix opening of diffs when browsing branches.
 
 tig-0.16.2

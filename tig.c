@@ -6168,6 +6168,8 @@ get_input(int prompt_position)
 
 		} else {
 			input_mode = FALSE;
+			if (key == erasechar())
+				key = KEY_BACKSPACE;
 			return key;
 		}
 	}
