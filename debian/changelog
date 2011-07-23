@@ -1,3 +1,12 @@
+tig (0.17-1vontrapp1) unstable; urgency=low
+
+  * Cherry picked a few issues from upstream
+   - use error codes in parse_int, this allows 256colors
+   - use erasechar to fix backspace bug
+  * fix revgraph colors in manpage
+
+ -- Von Fugal <von@fugal.net>  Sat, 23 Jul 2011 02:30:55 -0600
+
 tig (0.17-1) unstable; urgency=low
 
   * New upstream release:
