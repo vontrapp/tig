@@ -11,7 +11,7 @@ Copyright Holder:
 
 License:
 
-	Copyright © 2006-2009 Jonas Fonseca <fonseca@diku.dk>
+	Copyright © 2006-2010 Jonas Fonseca <fonseca@diku.dk>
 
 	This package is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -30,6 +30,15 @@ License:
 On Debian systems, the complete text of the GNU General Public License
 can be found in `/usr/share/common-licenses/GPL'.
 
-The Debian packaging is © 2006-2009, Sebastian Harl <tokkee@debian.org> and
+	Much of the code for dealing with Unicode is derived from ELinks' UTF-8
+	code developed by Scrool <scroolik@gmail.com>. Origin file is
+	src/intl/charset.c from the UTF-8 branch commit elinks-0.11.0-g31f2c28.
+	ELinks is developed by Petr Baudiš and Jonas Fonseca and licensed under
+	the General Public License, version 2, see above.
+
+On Debian systems, the complete text of the GNU General Public License,
+version 2, can be found in `/usr/share/common-licenses/GPL-2'.
+
+The Debian packaging is © 2006-2010, Sebastian Harl <tokkee@debian.org> and
 is licensed under the GPL, see above.
 

@@ -1,0 +1,47 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## bts594549-pager-segfault.dpatch by Jonas Fonseca <fonseca@diku.dk>
+##
+## DP: Fix segfault when starting tig in pager mode.
+## DP:
+## DP: (Upstream commit 5355b6ed446a22714d944c316f3c037348f67d76)
+
+@DPATCH@
+
+diff a/tig.c b/tig.c
+--- a/tig.c
++++ b/tig.c
+@@ -2308,7 +2308,7 @@
+ 	VIEW_(BLAME,  "blame",  &blame_ops,  TRUE,  ref_commit),
+ 	VIEW_(BRANCH, "branch",	&branch_ops, TRUE,  ref_head),
+ 	VIEW_(HELP,   "help",   &help_ops,   FALSE, ""),
+-	VIEW_(PAGER,  "pager",  &pager_ops,  FALSE, "stdin"),
++	VIEW_(PAGER,  "pager",  &pager_ops,  FALSE, ""),
+ 	VIEW_(STATUS, "status", &status_ops, TRUE,  ""),
+ 	VIEW_(STAGE,  "stage",	&stage_ops,  TRUE,  ""),
+ };
+@@ -3700,6 +3700,13 @@
+ 		break;
+ 
+ 	case REQ_VIEW_PAGER:
++		if (view == NULL) {
++			if (!io_open(&VIEW(REQ_VIEW_PAGER)->io, ""))
++				die("Failed to open stdin");
++			open_view(view, request, OPEN_PREPARED);
++			break;
++		}
++
+ 		if (!VIEW(REQ_VIEW_PAGER)->pipe && !VIEW(REQ_VIEW_PAGER)->lines) {
+ 			report("No pager content, press %s to run command from prompt",
+ 			       get_key(view->keymap, REQ_PROMPT));
+@@ -7729,10 +7736,8 @@
+ 	const char **filter_argv = NULL;
+ 	int i;
+ 
+-	if (!isatty(STDIN_FILENO)) {
+-		io_open(&VIEW(REQ_VIEW_PAGER)->io, "");
++	if (!isatty(STDIN_FILENO))
+ 		return REQ_VIEW_PAGER;
+-	}
+ 
+ 	if (argc <= 1)
+ 		return REQ_VIEW_MAIN;

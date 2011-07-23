@@ -1,3 +1,32 @@
+tig (0.16-2) unstable; urgency=low
+
+  * debian/patches:
+    - Added bts594549-pager-segfault - upstream patch fixing a segfault when
+      started in pager mode; thanks to Kumar Appaiah for reporting this and
+      pointing out the upstream fix (Closes: #594549).
+  * debian/control, debian/rules:
+    - Build-depend on and use dpatch.
+  * Added debian/README.source:
+    - The file includes a pointer to /usr/share/doc/dpatch/README.source.gz.
+
+ -- Sebastian Harl <tokkee@debian.org>  Fri, 03 Sep 2010 21:23:44 +0200
+
+tig (0.16-1) unstable; urgency=low
+
+  * New upstream release; thanks to Sedat Dilek for the pointer
+    (Closes: #586560).
+  * debian/control:
+    - Updated versioned build-dep on asciidoc to versions >= 8.4 as documented
+      in the upstream `INSTALL' file.
+    - Updated standards-version to 3.8.4 -- no changes.
+    - Added epoch to versioned dependency on git-core and added git (>=
+      1:1.7.0.4-2~) as an alternative dependency, according to the rename of
+      the package; thanks to Jonathan Nieder and Beat Bolli for reporting this
+      (Closes: #568582).
+    - Depend on ${misc:Depends}, as recommended by debhelper.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 22 Jun 2010 22:51:20 +0200
+
 tig (0.15-1) unstable; urgency=low
 
   * New upstream release (Closes: #557575):
