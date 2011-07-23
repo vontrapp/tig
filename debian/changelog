@@ -1,3 +1,35 @@
+tig (0.17-1) unstable; urgency=low
+
+  * New upstream release:
+    - Fixed ncurses 2.8 issue causing tig to fail to start; thanks to Tarek
+      Soliman for reporting this and RjY for pointing out the new upstream
+      release (Closes: #617318).
+    - Enabled revision graph rendering by default; thanks to Paul Wise for
+      reporting this (Closes: #611876).
+  * Uploading to unstable -- Squeeze has been released \o/
+  * debian/rules:
+    - (Again) pass -I/usr/include/ncursesw to CFLAGS; this is no longer
+      handled by the configure script which now uses the third-party
+      'AX_WITH_CURSES' macro.
+    - Do not install 'test-graph' to the package.
+    - Install 'NEWS' as upstream changelog, rather than as 'NEWS'.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 08 Mar 2011 14:43:17 +0100
+
+tig (0.16.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/patches:
+    - Removed bts594549-pager-segfault -- included upstream.
+  * debian/control, debian/rules:
+    - No longer use dpatch.
+  * Removed debian/README.source.
+  * Uploading to experimental because of the Squeeze freeze.
+  * debian/control:
+    - Updated Standards-Version to 3.9.1 -- no changes.
+
+ -- Sebastian Harl <tokkee@debian.org>  Tue, 21 Sep 2010 21:57:26 +0200
+
 tig (0.16-2) unstable; urgency=low
 
   * debian/patches:
