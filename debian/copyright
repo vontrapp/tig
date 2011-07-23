@@ -1,0 +1,35 @@
+This package was debianized by Sebastian Harl <tokkee@debian.org> on
+Thu, 28 Sep 2006 13:09:36 +0200.
+
+It was downloaded from <http://jonas.nitro.dk/tig/releases/>.
+
+Upstream Author:
+	Jonas Fonseca <fonseca@diku.dk>
+
+Copyright Holder:
+	Jonas Fonseca <fonseca@diku.dk>
+
+License:
+
+	Copyright © 2006-2009 Jonas Fonseca <fonseca@diku.dk>
+
+	This package is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	This package is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this package; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+On Debian systems, the complete text of the GNU General Public License
+can be found in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is © 2006-2009, Sebastian Harl <tokkee@debian.org> and
+is licensed under the GPL, see above.
+
